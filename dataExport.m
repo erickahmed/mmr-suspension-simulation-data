@@ -1,27 +1,15 @@
 clear;
 clc;
 
-prompt = 'Press F for front or R for rear';
-str = input(prompt,'s');
+prompt = 'Press "1" for front or "2" for rear: ';
+side = input(prompt, 's');
 
-if str == F
-    content = who('-file', 'M22H_FrontSuspension_Data.mat');
-    filename = 'FrontSuspension_Exported.xlsx';
-    sheetName = 'Front';
-elseif str == R
-    content = who('-file', 'M22H_RearSuspension_Data.mat');
-    filename = 'RearSuspension_Exported.xlsx';
-    sheetName = 'Rear';
+selectSide(side);
 
-fprintf('Initializing exporting process');
+fprintf('Initializing exporting process \n');
 
 for i=1:length(content)
     writetable(content, filename, 'Sheet', sheetName, 'WriteVariableNames', true);
     end;
+    
 fprintf('Finished exporting')
-
-
-
-
-
-
