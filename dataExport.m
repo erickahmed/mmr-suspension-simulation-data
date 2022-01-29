@@ -4,11 +4,11 @@ clc;
 prompt = 'Press "1" for front or "2" for rear: ';
 side = input(prompt, 's');
 
-[frontrear, fileName, sheetName] = selectSide(side);
+[fileName, frontrear, sheetName] = selectSide(side);
 
-if frontrear == 'front'
+if strcmp(frontrear, 'front')
     Parameter = who('-file', 'M22H_FrontSuspension_Data.mat');
-elseif frontrear == 'rear'
+elseif strcmp(frontrear, 'rear')
     Parameter = who('-file', 'M22H_RearSuspension_Data.mat');
     end;
 

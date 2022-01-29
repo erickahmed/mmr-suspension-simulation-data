@@ -1,14 +1,14 @@
-function [frontrear, fileName, sheetName] = selectSide(input);
+function [fileName, frontrear, sheetName] = selectSide(input);
 
 %input 1 is front, 2 is rear
 
-if rem(input, 2) == 0
+fileName = 'SuspensionData_Exported.xlsx';
+
+if rem(input, 2) == 1
     frontrear = 'front';
-    fileName = 'FrontSuspension_Exported.xlsx';
     sheetName = 'Front';
-elseif rem(input, 2) ~= 0
+elseif rem(input, 2) == 0
     frontrear = 'rear';
-    fileName = 'RearSuspension_Exported.xlsx';
     sheetName = 'Rear';
 else
     fprintf = 'An error occured!';
