@@ -6,8 +6,10 @@ fileName = 'SuspensionData_Exported.xlsx';
 
 if rem(input, 2) == 1
     carSide = 'front';
+    FileData = load('M22H_FrontSuspension_Data.mat');
 elseif rem(input, 2) == 0
     carSide = 'rear';
+    FileData = load('M22H_RearSuspension_Data.mat');
 else
-    fprintf = 'An error occured!';
+    error('Error: %s is not a valid input', carSide)
     end;
