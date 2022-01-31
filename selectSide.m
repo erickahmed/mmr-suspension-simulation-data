@@ -5,11 +5,9 @@ function [fileName, frontrear, sheetName] = selectSide(input);
 fileName = 'SuspensionData_Exported.xlsx';
 
 if rem(input, 2) == 1
-    frontrear = 'front';
-    sheetName = 'Front';
+    carSide = 'front';
 elseif rem(input, 2) == 0
-    frontrear = 'rear';
-    sheetName = 'Rear';
+    carSide = 'rear';
 else
     fprintf = 'An error occured!';
     end;
